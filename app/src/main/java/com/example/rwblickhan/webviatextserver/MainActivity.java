@@ -6,6 +6,8 @@ import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int RECEIVE_SMS = 1;
@@ -27,17 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
         Looper.prepare();
         Looper.loop();
-    }
-
-    public void onResult(Object result)
-    {
-        Message msg = Message.obtain();
-
-        msg.setTarget(mHandler);
-        msg.what = RECEIVE_SMS;
-        msg.obj = result;
-
-        msg.sendToTarget();
     }
 
     static public String parseAndFetchContent(Message msg)
