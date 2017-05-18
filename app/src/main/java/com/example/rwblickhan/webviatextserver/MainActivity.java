@@ -30,8 +30,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -39,14 +38,12 @@ public class MainActivity extends AppCompatActivity {
         Looper.loop();
     }
 
-    static public String parseAndFetchContent(Message msg)
-    {
+    static public String parseAndFetchContent(Message msg) {
         //TODO
         return "";
     }
 
-    static public void sendSMS(String str)
-    {
+    static public void sendSMS(String str) {
         //TODO
     }
 
