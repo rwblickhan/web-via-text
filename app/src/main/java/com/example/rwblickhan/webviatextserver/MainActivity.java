@@ -7,6 +7,10 @@ import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.net.HttpURLConnection;
+import java.util.HashMap;
+import java.util.Map;
+
 public class MainActivity extends AppCompatActivity {
 
     private static MainActivity inst;
@@ -42,7 +46,21 @@ public class MainActivity extends AppCompatActivity {
     static public String parseAndFetchContent(Message msg)
     {
         //TODO
-        return "";
+
+        HashMap<String, String> urlMap = (HashMap<String, String>) msg.obj;
+        for (Map.Entry<String, String> entry : urlMap.entrySet())
+        {
+            String phoneNumber = entry.getKey();
+            String url = entry.getValue();
+
+            if (phoneNumber == null || url == null)
+            {
+                return null;
+
+            }
+        }
+
+        return null;
     }
 
     static public void sendSMS(String str)
@@ -50,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         //TODO
     }
 
-    public void onUrlParse(Object url) {
+    public void onUrlParse(HashMap<String, String> url) {
         Message msg = Message.obtain();
 
         msg.setTarget(mHandler);

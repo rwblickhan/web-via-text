@@ -35,7 +35,6 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
             //TODO error handling
         }
 
-        //TODO check that sms body is a valid url
         MainActivity inst = MainActivity.instance();
         HashMap<String, String> obj = new HashMap<>();
         obj.put(address, url);
